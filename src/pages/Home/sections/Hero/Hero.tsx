@@ -11,7 +11,15 @@ const Hero = () => {
         backgroundColor: theme.palette.primary.main,
         height: "100vh",
         display: "flex",
-        alignItems: "center"
+        alignItems: "center",
+        [theme.breakpoints.up('xs')]: { // <= mobile
+            paddingTop:"100px"
+        },
+
+        [theme.breakpoints.up('md')]: { // >= mobile
+            paddingTop:"0",
+
+        }
     }))
 
     const StyledImg = styled("img")(({theme})=> ({
@@ -36,7 +44,7 @@ const Hero = () => {
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={7}>
-                            <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>Adriana Saty</Typography>
+                            <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>Fábio Júnior</Typography>
                             <Typography color="primary.contrastText" variant="h2" textAlign="center" >I'm a Software Engineer</Typography>
                             <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
